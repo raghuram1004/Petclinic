@@ -13,10 +13,10 @@ phases:
     commands:
       - echo "Installing dependencies..."
       - mvn clean verify sonar:sonar \
-  -Dsonar.projectKey=Simple-java1 \
-  -Dsonar.projectName='Simple-java1' \
-  -Dsonar.host.url=https://c52ca73f-c94e-4362-a089-f5a56bae8f84-10-244-8-60-9000.papa.r.killercoda.com \
-  -Dsonar.token=sqp_7614dc972f70a32877f27c7309152f64ef7f2b56
+                 -Dsonar.projectKey=Simple-java1 \
+                 -Dsonar.projectName='Simple-java1' \
+                 -Dsonar.host.url=https://c52ca73f-c94e-4362-a089-f5a56bae8f84-10-244-8-60-9000.papa.r.killercoda.com \
+                 -Dsonar.token=sqp_7614dc972f70a32877f27c7309152f64ef7f2b56
   build:
     commands:
       - echo "Running tests..."
