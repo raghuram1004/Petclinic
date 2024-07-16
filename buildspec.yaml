@@ -12,18 +12,18 @@ phases:
   pre_build:
     commands:
       - echo "Installing dependencies..."
-      - mvn clean verify sonar:sonar \
-                 -Dsonar.projectKey=Simple-java1 \
-                 -Dsonar.projectName='Simple-java1' \
-                 -Dsonar.host.url=https://c52ca73f-c94e-4362-a089-f5a56bae8f84-10-244-8-60-9000.papa.r.killercoda.com \
-                 -Dsonar.token=sqp_7614dc972f70a32877f27c7309152f64ef7f2b56
+      - mvn sonar:sonar \
+          -Dsonar.projectKey=Simple \
+          -Dsonar.host.url=http://34.205.62.170:9000 \
+          -Dsonar.login=29ced2a9515d02de1734da8e8c4809375b138b94
+
   build:
     commands:
       - echo "Running tests..."
       - echo "Building Docker image..."
       - echo "$DOCKER_REGISTRY_PASSWORD" | docker login -u "$DOCKER_REGISTRY_USERNAME" --password-stdin "$DOCKER_REGISTRY_URL"
-      - docker build -t "$DOCKER_REGISTRY_URL/$DOCKER_REGISTRY_USERNAME/hotel-app:latest" .
-      - docker push "$DOCKER_REGISTRY_URL/$DOCKER_REGISTRY_USERNAME/hotel-app:latest"
+      - docker build -t "$DOCKER_REGISTRY_URL/$DOCKER_REGISTRY_USERNAME/petclinic:latest" .
+      - docker push "$DOCKER_REGISTRY_URL/$DOCKER_REGISTRY_USERNAME/petclinic:latest"
   post_build:
     commands:
       - echo "Build completed successfully!"
